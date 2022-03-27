@@ -3,9 +3,9 @@ import { FC } from 'react';
 const WalletIcon: FC = ({}) => {
   return (
     <svg
-      width="36"
-      height="33"
-      viewBox="0 0 36 33"
+      width="42"
+      height="42"
+      viewBox="0 0 42 42"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
