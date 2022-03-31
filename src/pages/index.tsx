@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import HomeModule from '@modules/home';
+import { Login } from '@components/Button/Login';
 
 const Home: NextPage = () => {
   return (

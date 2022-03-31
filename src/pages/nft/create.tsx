@@ -1,12 +1,11 @@
 import { useMetamask, useNFTCollection } from '@thirdweb-dev/react';
 import { NextPage } from 'next';
 import { useState } from 'react';
-import NavBar from '../../common/components/NavBar';
 
 const CreateNFT: NextPage = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
   const nftContract = useNFTCollection(
     '0xC7660Cf52264c885a4cA77f09972abB857A3C63c'
   );
@@ -39,7 +38,7 @@ const CreateNFT: NextPage = () => {
           <input
             placeholder="file"
             type="file"
-            onChange={(e) => setFile(e.target.files[0])}
+            onChange={(e) => setFile(e.target.files![0])}
             accept="image/png, image/jpeg"
           />
           <button type="submit">Submit</button>

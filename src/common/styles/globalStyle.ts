@@ -14,10 +14,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Urbanist', 'Montserrat', sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    color: #777;
   }
 `;
 

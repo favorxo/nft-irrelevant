@@ -18,10 +18,11 @@
     "paths": {
       "@components/*": ["src/common/components/*"],
       "@styles/*": ["src/common/styles/*"],
+      "@hooks/*": ["src/common/hooks/*"],
       "@modules/*": ["src/modules/*"]
     }
   },
 
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["src/common/types/next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

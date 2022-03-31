@@ -1,8 +1,7 @@
 import { NextPage } from 'next';
-import { FC } from 'react';
 
 const NFT: NextPage = ({}) => {
-  return <div>123</div>;
+  return <div></div>;
 };
 
 export default NFT;
