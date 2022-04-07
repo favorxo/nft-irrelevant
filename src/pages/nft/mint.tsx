@@ -1,3 +1,4 @@
+import NavBar from '@components/NavBar';
 import { useMetamask, useNFTCollection } from '@thirdweb-dev/react';
 import { NextPage } from 'next';
 import { useState } from 'react';
@@ -19,6 +20,7 @@ const CreateNFT: NextPage = () => {
 
   return (
     <>
+      <NavBar />
       <div style={{ paddingTop: 500 }}>
         <button
           onClick={() => {

@@ -11,6 +11,11 @@ const FilledButton = styled.button`
   border-radius: 0.8rem;
   border: none;
   outline: none;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 `;
 
 export default FilledButton;

@@ -8,9 +8,10 @@ import useMediaQuery from '@hooks/useMediaQuery';
 
 import styled from 'styled-components';
 import Text from '@components/Text/Text';
+import { useMoralis } from 'react-moralis';
 
 const NavBar: FC = () => {
-  const isMobile = useMediaQuery('(max-width: 960px)');
+  const { authenticate, isAuthenticated } = useMoralis();
 
   return (
     <NavContainer>
@@ -21,34 +22,53 @@ const NavBar: FC = () => {
         <InputField placeholder="Search items, collections, accounts" />
       </InputContainer>
       <Links>
-        <Link href="#" passHref>
-          <Text>Explore</Text>
+        <Link href="/explore" passHref>
+          <Hover>
+            <Text>Explore</Text>
+          </Hover>
         </Link>
-        <Link href="#" passHref>
-          <Text>Stats</Text>
+        <Link href="/stats" passHref>
+          <Hover>
+            <Text>Stats</Text>
+          </Hover>
         </Link>
-        <Link href="#" passHref>
-          <Text>Resources</Text>
+        <Link href="/resources" passHref>
+          <Hover>
+            <Text>Resources</Text>
+          </Hover>
         </Link>
-        <Link href="#" passHref>
-          <Text>Community</Text>
+        <Link href="/community" passHref>
+          <Hover>
+            <Text>Community</Text>
+          </Hover>
         </Link>
       </Links>
-      <FilledButton>Create</FilledButton>
+      <Link href="/nft/mint">
+        <FilledButton>Create</FilledButton>
+      </Link>
       <IconContainer>
-        <LinkItem>
-          <FiGithub size={24} />
-        </LinkItem>
-        <LinkItem>
-          <FiUser size={24} />
-        </LinkItem>
+        <Link href="https://github.com/favorxo">
+          <LinkItem>
+            <FiGithub size={24} />
+          </LinkItem>
+        </Link>
+        <Link href="/user">
+          <LinkItem onClick={() => isAuthenticated || authenticate()}>
+            <FiUser size={24} />
+          </LinkItem>
+        </Link>
       </IconContainer>
     </NavContainer>
   );
 };
 
+const Hover = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 const NavContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 11rem;
   display: flex;
   top: 0;
@@ -86,14 +106,16 @@ const Links = styled.div`
   margin-right: 4rem;
 `;
 
-const StyledLink = styled.h2`
-  font-size: 1.8rem;
-`;
-
 const LinkItem = styled.div`
   margin-right: 3.2rem;
   &:last-child {
     margin-right: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 2px solid black;
+    margin-bottom: -2px;
   }
 `;
 
@@ -101,6 +123,7 @@ const IconContainer = styled.div`
   display: flex;
   margin-left: 3.2rem;
 `;
+
 const SearchIcon = styled.div`
   margin-right: 0.6rem;
 `;

@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import { ThirdwebProvider, ChainId } from '@thirdweb-dev/react';
-import NavBar from '@components/NavBar';
 import GlobalStyle from '@styles/globalStyle';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@styles/theme';
